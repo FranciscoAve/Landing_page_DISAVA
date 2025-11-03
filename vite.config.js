@@ -5,7 +5,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',             
-        catalog: 'product_catalog.html' 
+        catalog: '/pages/product_catalog.html' 
         //agg las otras 3
       }
     }
