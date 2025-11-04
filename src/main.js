@@ -1,10 +1,10 @@
 import './style.css'
+import './js/footer.js'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 
 const btnCatalogo = document.getElementById("btnCatalogo");
-//const footer = document.createElement("div"); aqui podemos agregar el footer dinamicamente espero
 //const contenido = document.createElement('div'); // contenedor dinámico
 //document.body.appendChild(contenido);
 
