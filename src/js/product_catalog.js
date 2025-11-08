@@ -1,3 +1,5 @@
+import '../style.css'
+
 const footerHtml = `
 <!-- Footer Component -->
 <footer class="bg-[#222222] dark:bg-background-dark text-[#EAEAEA] py-16 px-6 sm:px-8 lg:px-16 font-display">
@@ -33,8 +35,8 @@ const footerHtml = `
 <ul class="space-y-2 text-sm">
 <li><a class="hover:text-primary transition-colors duration-300" href="#">Inicio</a></li>
 <li><a class="hover:text-primary transition-colors duration-300" href="#">Productos</a></li>
-<li><a class="hover:text-primary transition-colors duration-300" href="#">Sobre Nosotros</a></li>
-<li><a class="hover:text-primary transition-colors duration-300" href="#">Contacto</a></li>
+<li><a class="hover:text-primary transition-colors duration-300" href="#">Más vendidos</a></li>
+<li><a class="hover:text-primary transition-colors duration-300" href="#">Ofertas</a></li>
 </ul>
 </div>
 <!-- Column 4: Síguenos -->
@@ -66,3 +68,13 @@ const footerHtml = `
 
 
 document.body.insertAdjacentHTML("afterend", footerHtml);
+
+
+
+const btnToPrincipal = document.getElementById("toPrincipal");
+
+
+btnToPrincipal.addEventListener("click", () => { 
+    window.open("/index.html","_self");
+});
+

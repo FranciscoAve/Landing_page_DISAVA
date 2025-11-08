@@ -45,7 +45,7 @@
     <header class="w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-    <div class="flex items-center gap-4 text-gray-800 dark:text-white">
+    <div id="toPrincipal" class="flex items-center gap-4 text-gray-800 dark:text-white">
     <div class="size-6 text-primary">
     <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
     <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
@@ -53,14 +53,8 @@
     </div>
     <h2 class="text-xl font-bold tracking-tighter">DISAVA</h2>
     </div>
-    <nav class="hidden md:flex items-center gap-9">
-    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Inicio</a>
-    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Catálogo</a>
-    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Nosotros</a>
-    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Contacto</a>
-    </nav>
     <div class="flex items-center">
-    <a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold tracking-wide hover:bg-opacity-90 transition-colors" href="https://api.whatsapp.com/send?phone=TUNUMERO&amp;text=Hola%20DISAVA,%20quisiera%20hacer%20una%20consulta%20general." target="_blank">
+    <a class="flex min-w-[60px] sm:min-w-[84px] md:min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 sm:h-10 px-3 sm:px-4 bg-primary text-background-dark text-xs sm:text-sm font-bold tracking-wide hover:bg-opacity-90 transition-colors" href="https://api.whatsapp.com/send?phone=TUNUMERO&amp;text=Hola%20DISAVA,%20quisiera%20hacer%20una%20consulta%20general." target="_blank">
     <span class="truncate">Consultar por WhatsApp</span>
     </a>
     </div>
@@ -126,6 +120,6 @@
     </main>
     </div>
     </div>
-  <script type="module" src="../src/main.js"></script>
+    <script type="module" src="../src/js/product_catalog.js"></script>
 </body>
 </html>
