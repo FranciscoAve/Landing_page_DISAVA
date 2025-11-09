@@ -1,6 +1,7 @@
 import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
+import { saveContact } from './js/firebase';
 
 const footerHtml = `
 <!-- Footer Component -->
@@ -127,3 +128,26 @@ enlacesMenu.forEach(enlace =>{
 });
 
 
+
+//contacto
+const enableContactForm = ()=>{
+  const contactForm = document.getElementById("contactForm");
+  
+  contactForm.addEventListener("submit", async(e)=>{
+    e.preventDefault();
+
+    const name = document.getElementById("fullName").value;
+    const mail = document.getElementById("mail").value;
+    const message = document.getElementById("message").value;
+
+    const result = await saveContact(name, mail, message);
+    alert(result.message);
+  });
+
+};
+
+
+
+(() => {
+  enableContactForm();
+})  ();
