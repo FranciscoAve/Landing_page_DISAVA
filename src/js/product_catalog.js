@@ -1,4 +1,5 @@
 import '../style.css'
+import { saveReview, loadReview } from './firebase';
 
 const footerHtml = `
 <!-- Footer Component -->
@@ -78,13 +79,61 @@ btnToPrincipal.addEventListener("click", () => {
     window.open("/index.html","_self");
 });
 
-
-
-
+const formRes = document.getElementById("reviewForm-1");
 const btnAnadirRes = document.getElementById("anadirRes");
 
-btnAnadirRes.addEventListener("click", ()=>{
-    const form = document.getElementById("reviewForm-1");
-    form.classList.toggle("hidden");
+function enableReviews() {
+    btnAnadirRes.addEventListener("click", () => {
+        formRes.classList.toggle("hidden");
 
-});
+    });
+
+    formRes.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const productID = document.getElementById("productID").dataset.productId;
+        const reviewName = document.getElementById("reviewName").value.trim();
+        const reviewText = document.getElementById("reviewText").value.trim();
+
+        alert(productID);
+
+        const result = await saveReview(productID, reviewName, reviewText);
+        alert(result.message);
+        formRes.reset();
+    });
+}
+
+
+async function loadReviewsById(productID){
+    const {status, result, message} = await loadReview(productID);
+    const reviewContainer = document.querySelector(`.reviews[data-product-id="${productID}"]`);
+    console.log(message);
+    
+    if (!reviewContainer) return;
+
+    // Limpiar reseñas previas
+    reviewContainer.innerHTML = "";
+
+    if(status=="success"){
+        const reseñas = Object.values(result); 
+        
+        reseñas.forEach(reseña=>{
+            const p = document.createElement("p");
+            p.classList.add("text-gray-300", "text-sm", "mb-2");
+            p.textContent = `${reseña.name}: ${reseña.text}`;
+            reviewContainer.appendChild(p);
+        });
+    }else if (status == "empty"){
+        reviewContainer.innerHTML = `<p class="text-gray-400 italic text-center">${message}</p>`;
+    }else{
+        reviewContainer.innerHTML = `<p class="text-red-400 text-center">Error al cargar reseñas: ${message}</p>`;
+    }
+
+
+}
+
+
+(async () => {
+    await loadReviewsById("product1"); // cargar reseñas del producto
+    enableReviews();               // habilitar el formulario
+})();

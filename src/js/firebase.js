@@ -16,6 +16,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
+//contactame
 const saveContact = async (fullName, mail, message) => {
   try{
     
@@ -35,11 +36,46 @@ const saveContact = async (fullName, mail, message) => {
 };
 
 
-//añadir reseñas de productos, 
+//reseñas de productos
+
+
+//guardar reseña
+
+const saveReview = async (productID, name, text)=>{
+  try{
+    const reviewRef = ref(database, `productReviews/${productID}`);
+    const newReviewRef = push(reviewRef);
+    await set(newReviewRef, {
+      name: name,
+      text: text
+    });
+
+    return {status:"success", message:"Reseña guardada exitosamente"}
+
+  }catch(e){
+    return {status:"error", message:e.message}
+  }
+
+};
+
+//cargar reseñas
+const loadReview = async(productID)=>{
+  try{
+    const reviewRef = ref(database, `productReviews/${productID}`); 
+    const snapshot = await get(reviewRef);
+    console.log(snapshot.exists());
+    if(snapshot.exists()){
+      const result = snapshot.val(); 
+      return {status: "success", result}
+    }else{
+      return {status:"empty", message:"No hay reseñas todavía"}
+    }
+    
+  }catch(e){
+    return {status:"error", message:e.message}
+  }
+};
 
 
 
-
-
-
-export {saveContact};
+export {saveContact, saveReview, loadReview};
