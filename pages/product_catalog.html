@@ -82,7 +82,7 @@
     </div>
 
     <div class="p-6 flex-grow flex flex-col">
-        <h3 id="productID" data-product-id="product1" class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+        <h3 data-product-id="product1" class="productID text-xl font-bold text-gray-900 dark:text-white mb-2">
         Balanzas Digitales de Precisión
         </h3>
 
@@ -92,10 +92,10 @@
         </div>
 
         <!-- Formulario oculto -->
-        <form id="reviewForm-1" class="hidden flex-col gap-2 mt-2">
-        <input id="reviewName" type="text" placeholder="Tu nombre" 
+        <form data-product-id="product1" class="reviewForm hidden flex-col gap-2 mt-2">
+        <input type="text" placeholder="Tu nombre" 
                 class="w-full rounded-md p-2 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-transparent focus:ring-primary focus:border-primary" />
-        <textarea id="reviewText" rows="3" placeholder="Escribe tu reseña..." 
+        <textarea rows="3" placeholder="Escribe tu reseña..." 
                 class="w-full rounded-md p-2 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-transparent focus:ring-primary focus:border-primary"></textarea>
         <button type="submit"
                 class="py-1.5 px-3 bg-primary/80 hover:bg-primary text-background-dark text-xs font-semibold rounded-md transition-all duration-200 shadow-sm hover:shadow-md mb-4">
@@ -110,7 +110,7 @@
                 Consultar
             </a>
 
-            <button id="anadirRes" class="sm:flex-1 py-2.5 px-4 bg-primary text-background-dark font-bold rounded-lg transition-transform duration-300 group-hover:scale-105 text-sm">
+            <button data-product-id="product1" class="anadirRes sm:flex-1 py-2.5 px-4 bg-primary text-background-dark font-bold rounded-lg transition-transform duration-300 group-hover:scale-105 text-sm">
                 Añadir reseña
             </button>
         </div>
@@ -124,12 +124,38 @@
     <img alt="Máquina contadora de billetes en funcionamiento" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc2LtxzWQ9w1AkmRIDcWgsJml4SkgUpms-W7r35H8c4EGgygY2my9dryJB4_xZxRNCVzoQQyt31VDxqPwbGgLq4jT1OFpMWyznCIN3IuhUQ38Vj45GfKWU4K_NWtyeJJEQbGbMqdQv8o_tVLk7fRkioJVDMh3hobZlIZmm5iNTtKlxxYntCetp-DqljyZDMNLH6RgRvg1QrqE-Ca0gOMuKLGuLCnHSCARlFztldmphzZaOhceIES2kJrDpxcJYHc9EW69FQBXc6UNJ"/>
     </div>
     <div class="p-6 flex-grow flex flex-col">
-    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Contadoras y Detectoras de Billetes</h3>
-    <div class="mt-auto">
-    <a class="inline-block w-full text-center py-3 px-6 bg-primary text-background-dark font-bold rounded-lg transition-transform duration-300 group-hover:scale-105" href="https://api.whatsapp.com/send?phone=TUNUMERO&amp;text=Hola%20DISAVA,%20estoy%20interesado%20en%20consultar%20el%20precio%20de%20las%20Contadoras%20y%20Detectoras%20de%20Billetes." target="_blank">
-                        Ver más
-                        </a>
-    </div>
+        <h3 data-product-id="product2" class="productID text-xl font-bold text-gray-900 dark:text-white mb-2">
+            Contadoras y Detectoras de Billetes
+        </h3>
+                <!-- Contenedor de reseñas -->
+        <div data-product-id="product2" class="reviews space-y-3 mb-4 max-h-40 overflow-y-auto bg-white/10 dark:bg-gray-800/30 rounded-lg p-3 text-sm">
+        <p class="text-gray-400 italic text-center">No hay reseñas todavía.</p>
+        </div>
+
+        <!-- Formulario oculto -->
+        <form data-product-id="product2" class="reviewForm hidden flex-col gap-2 mt-2">
+        <input type="text" placeholder="Tu nombre" 
+                class="w-full rounded-md p-2 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-transparent focus:ring-primary focus:border-primary" />
+        <textarea rows="3" placeholder="Escribe tu reseña..." 
+                class="w-full rounded-md p-2 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-transparent focus:ring-primary focus:border-primary"></textarea>
+        <button type="submit"
+                class="py-1.5 px-3 bg-primary/80 hover:bg-primary text-background-dark text-xs font-semibold rounded-md transition-all duration-200 shadow-sm hover:shadow-md mb-4">
+            Enviar reseña
+        </button>
+        </form>
+
+        <div class="mt-auto flex flex-col sm:flex-row gap-2">
+            <a class="sm:flex-1 text-center py-2.5 px-4 bg-primary text-background-dark font-bold rounded-lg transition-transform duration-300 group-hover:scale-105 text-sm"
+                href="https://api.whatsapp.com/send?phone=TUNUMERO&text=Hola%20DISAVA,%20estoy%20interesado%20en%20consultar%20el%20precio%20de%20las%20Balanzas%20Digitales%20de%20Precisión."
+                target="_blank">
+                Consultar
+            </a>
+
+            <button data-product-id="product2" class="anadirRes sm:flex-1 py-2.5 px-4 bg-primary text-background-dark font-bold rounded-lg transition-transform duration-300 group-hover:scale-105 text-sm">
+                Añadir reseña
+            </button>
+        </div>
+
     </div>
     </div>
     <!-- Product Card 3 -->
@@ -138,12 +164,37 @@
     <img alt="Caja registradora moderna en un mostrador de una tienda" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsZqRxA6ub-MJo0eZE6PTDk3fLzF3_tDnd95QmMvYvDps2NWgoFMhH0WZgpNOS3oAr3aAtDK2gq0Uk4NHlsMIkJGO4R6uhM97zqB6NwP-grKiRFPD-UxHQCvelMRq5Rmtt9RWy-83bqTJejOrPiqrjV8okgr8hTvrn079HoifwsT3sb6OPO_Frv1qxl-wSaAbPjQMAIyonyVhGFTaQqjrAwMqxNvj9OTnWVwxbIsGJ7idwK5ahwY6riUC5D1ltGcXAMZCJu2UYrz6N"/>
     </div>
     <div class="p-6 flex-grow flex flex-col">
-    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Cajas Registradoras</h3>
-    <div class="mt-auto">
-    <a class="inline-block w-full text-center py-3 px-6 bg-primary text-background-dark font-bold rounded-lg transition-transform duration-300 group-hover:scale-105" href="https://api.whatsapp.com/send?phone=TUNUMERO&amp;text=Hola%20DISAVA,%20estoy%20interesado%20en%20consultar%20el%20precio%20de%20las%20Cajas%20Registradoras." target="_blank">
-                        Ver más
-                        </a>
-    </div>
+        <h3 data-product-id="product3" class="productID text-xl font-bold text-gray-900 dark:text-white mb-2">
+            Cajas Registradoras
+        </h3>
+        <!-- Contenedor de reseñas -->
+        <div data-product-id="product3" class="reviews space-y-3 mb-4 max-h-40 overflow-y-auto bg-white/10 dark:bg-gray-800/30 rounded-lg p-3 text-sm">
+        <p class="text-gray-400 italic text-center">No hay reseñas todavía.</p>
+        </div>
+
+        <!-- Formulario oculto -->
+        <form data-product-id="product3" class="reviewForm hidden flex-col gap-2 mt-2">
+        <input type="text" placeholder="Tu nombre" 
+                class="w-full rounded-md p-2 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-transparent focus:ring-primary focus:border-primary" />
+        <textarea rows="3" placeholder="Escribe tu reseña..." 
+                class="w-full rounded-md p-2 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white bg-transparent focus:ring-primary focus:border-primary"></textarea>
+        <button type="submit"
+                class="py-1.5 px-3 bg-primary/80 hover:bg-primary text-background-dark text-xs font-semibold rounded-md transition-all duration-200 shadow-sm hover:shadow-md mb-4">
+            Enviar reseña
+        </button>
+        </form>
+
+        <div class="mt-auto flex flex-col sm:flex-row gap-2">
+            <a class="sm:flex-1 text-center py-2.5 px-4 bg-primary text-background-dark font-bold rounded-lg transition-transform duration-300 group-hover:scale-105 text-sm"
+                href="https://api.whatsapp.com/send?phone=TUNUMERO&text=Hola%20DISAVA,%20estoy%20interesado%20en%20consultar%20el%20precio%20de%20las%20Balanzas%20Digitales%20de%20Precisión."
+                target="_blank">
+                Consultar
+            </a>
+
+            <button data-product-id="product3" class="anadirRes sm:flex-1 py-2.5 px-4 bg-primary text-background-dark font-bold rounded-lg transition-transform duration-300 group-hover:scale-105 text-sm">
+                Añadir reseña
+            </button>
+        </div>
     </div>
     </div>
     </div>

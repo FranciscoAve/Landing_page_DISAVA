@@ -79,28 +79,36 @@ btnToPrincipal.addEventListener("click", () => {
     window.open("/index.html","_self");
 });
 
-const formRes = document.getElementById("reviewForm-1");
-const btnAnadirRes = document.getElementById("anadirRes");
+const btnAnadirRes = document.querySelectorAll(".anadirRes");
 
-function enableReviews() {
-    btnAnadirRes.addEventListener("click", () => {
-        formRes.classList.toggle("hidden");
+async function enableReviews() {
+    try{
+        btnAnadirRes.forEach( (btn) => {
+            const productID = btn.dataset.productId;
+            const formRes = document.querySelector(`.reviewForm[data-product-id="${productID}"]`);
 
-    });
+            btn.addEventListener("click", ()=>{
+                formRes.classList.toggle("hidden");
+            });
 
-    formRes.addEventListener("submit", async (e) => {
-        e.preventDefault();
+            formRes.addEventListener("submit", async (e)=>{
+                e.preventDefault();
 
-        const productID = document.getElementById("productID").dataset.productId;
-        const reviewName = document.getElementById("reviewName").value.trim();
-        const reviewText = document.getElementById("reviewText").value.trim();
 
-        alert(productID);
+                const reviewName = formRes.querySelector("input").value.trim();
+                const reviewText = formRes.querySelector("textarea").value.trim();
 
-        const result = await saveReview(productID, reviewName, reviewText);
-        alert(result.message);
-        formRes.reset();
-    });
+                const result = await saveReview(productID, reviewName, reviewText);
+                alert(result.message);
+                formRes.reset();
+
+            });
+            
+            loadReviewsById(productID);
+        });
+    }catch(e){
+        console.log(e.message);
+    }
 }
 
 
@@ -134,6 +142,5 @@ async function loadReviewsById(productID){
 
 
 (async () => {
-    await loadReviewsById("product1"); // cargar reseñas del producto
-    enableReviews();               // habilitar el formulario
+    await enableReviews();  // habilitar el formulario
 })();
